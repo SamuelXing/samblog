@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>sam's Blog</title>
+    </head>
+    <body>
+    {% if latest_blog_list %}
+    <ul>
+        {% for blog in latest_blog_list %}
+        <li>
+            <a href="/blogs/{{ blog.id }}/">{{ blog.name }}</a> • 创建于 {{ blog.created_at }}
+            <br>
+            {{ blog.content }}
+            <br>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No blogs are available.</p>
+    {% endif %}
+    </body>
+</html>
+
