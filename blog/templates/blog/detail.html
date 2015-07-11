@@ -1,12 +1,13 @@
-<html>
-<head>
-	<title>{{ blog.name  }}</title>
-</head>
-<body>
-    <article>
-        <h2>{{ blog.name }}</h2>
-        <p class="article-meta">发表于{{ blog.created_at }}</p>
-        <p>{{ blog.html_content }}</p>
-    </article>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+    blog.name
+{% endblock %}
+
+{% block content %}
+ <h2>{{ blog.name }}</h2>
+ <p class="article-meta">发表于{{ blog.created_at }}</p>
+ <p>{{ blog.html_content }}</p>
+{% endblock %}
+
+

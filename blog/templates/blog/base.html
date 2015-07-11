@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        {% endblock %}-SAM'S BLOG
+    </title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="samblog.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SAM'S BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">时间线</a></li>
+                <li><a href="#">音乐</a></li>
+                <li><a href="#">分类</a></li>
+                <li><a href="#">微评</a></li>
+                <li><a href="#">关于我</a> </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--<div class="visible-xs-block">-->
+<nav class="navbar navbar-default navbar-fixed-top visible-xs-block ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SAM'S BLOG JJD</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+                <!-- Single button -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">时间线</a></li>
+                        <li><a href="#">分类</a></li>
+                        <li><a href="#">微评</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<!--</div>-->
+
+<header class="setHeader">
+    <div class="setHeader-inner">
+        <h1 class="setHeader-title">
+            SAM'S BLOG
+        </h1>
+        <h5 class="setHeader-description">
+            与你分享
+        </h5>
+    </div>
+</header>
+<div class="container-fluid">
+    <article class="post">
+        {% block content %}
+        {% endblock %}
+    </article>
+</div>
+
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+</body>
+</html>

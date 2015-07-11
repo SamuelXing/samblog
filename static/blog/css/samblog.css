@@ -1,0 +1,48 @@
+html {
+    background-color: #fafafa;
+    color: #000;
+    font: 100%/1.5  Avenir, Arial;
+    -webkit-font-smoothing: antialiased;
+}
+
+.setHeader{
+    background: url(/static/blog/img/1.jpg) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    margin-top: -20px;
+    color: #000;
+    text-align: center;
+    text-shadow:0 1px 0 rgba(0,0,0,.1);
+}
+
+h1.setHeader-title{
+    font-size: 40px;
+    padding-top: 200px;
+}
+
+.setHeader-description{
+    font-size: 24px;
+    text-align: center;
+}
+
+.container-fluid{
+    background-color: #fafafa;
+    color: #000;
+    font: 100%/1.5  Avenir, Arial;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*定义文章的布局*/
+.post{
+
+}
+
+/*题目样式*/
+.post-title{
+
+}
+
+/*文章样式*/
+.post-body{
+
+}
