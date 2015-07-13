@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+   Category
+{% endblock %}
+
+{% block content %}
+    {% for cat in category_list %}
+        <h3>标签名:{{ cat.name }}</h3>
+        <ul>
+            {% for blog in blog_list %}
+                {% ifequal blog.cat_name_id  cat.id %}
+                    <li><a href="{% url 'detail' blog.id %}">{{blog.name}}</a></li>
+                {% endifequal %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

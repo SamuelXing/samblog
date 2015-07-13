@@ -13,67 +13,49 @@
 <body>
 <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <!--<div class="navbar-header">-->
-            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-                <!--<span class="sr-only">Toggle navigation</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-            <!--</button>-->
-            <!--<a class="navbar-brand" href="#">SAM'S BLOG</a>-->
-        <!--</div>-->
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
             <ul class="nav navbar-nav">
-                <li><a href="#">时间线</a></li>
-                <li><a href="#">音乐</a></li>
-                <li><a href="#">分类</a></li>
+                <li><a class="navbar-brand" href="#">
+                    SAM'S BLOG
+                </a></li>
+                <li><a href="{% url 'timeline' %}">时间线</a></li>
+                <li><a href="{% url 'music' %}">音乐</a></li>
+                <li><a href="{% url 'category' %}">分类</a></li>
                 <li><a href="#">微评</a></li>
                 <li><a href="#">关于我</a> </li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form " role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit" class="btn btn-default">Submit</button>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
             </form>
-        </div><!-- /.navbar-collapse -->
-    <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+    </div><!-- /.container-fluid -->
 </nav>
 
-<!--<div class="visible-xs-block">-->
-<nav class="navbar navbar-default navbar-fixed-top visible-xs-block ">
-    <div class="container-fluid">
-        <!--<div class="navbar-header">-->
-            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
-                <!--<span class="sr-only">Toggle navigation</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-            <!--</button>-->
-            <!--<a class="navbar-brand" href="#">SAM'S BLOG JJD</a>-->
-        <!--</div>-->
 
-        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">-->
-            <ul class="nav navbar-nav">
-                <!-- Single button -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">时间线</a></li>
-                        <li><a href="#">分类</a></li>
-                        <li><a href="#">微评</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
+<!--<nav class="navbar navbar-default navbar-fixed-top visible-xs-block ">-->
+    <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header">-->
+                <!--<a class="navbar-brand" href="#">-->
+                    <!--SAM'S BLOG-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--&lt;!&ndash; Single button &ndash;&gt;-->
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">-->
+                        <!--<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="#">时间线</a></li>-->
+                        <!--<li><a href="#">分类</a></li>-->
+                        <!--<li><a href="#">微评</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
     <!--</div>-->
-</nav>
-<!--</div>-->
+<!--</nav>-->
+
 
 <header class="setHeader">
     <div class="setHeader-inner">
@@ -92,7 +74,56 @@
     </article>
 </div>
 
+<!--<div id="RelativeBlogs">-->
+	<!--<strong><a id='btn_close'>关闭</a>相关文章阅读</strong>-->
+	<!--<ul>-->
+					<!--<li>-->
+		<!--<span class='date'>2013/10/03</span>-->
+		<!--<a href="http://my.oschina.net/uniquejava/blog/165818" title="git pull force">git pull force</a>-->
+	<!--</li>-->
+				<!--<li>-->
+		<!--<span class='date'>2015/05/22</span>-->
+		<!--<a href="http://my.oschina.net/ois/blog/418144" title="java  git batch pull">java  git batch pull...</a>-->
+	<!--</li>-->
+				<!--<li>-->
+		<!--<span class='date'>2014/03/18</span>-->
+		<!--<a href="http://my.oschina.net/mdongfeng/blog/209430" title="Windows git pull 批处理">Windows git pull 批处理...</a>-->
+	<!--</li>-->
+				<!--<li>-->
+		<!--<span class='date'>2013/08/05</span>-->
+		<!--<a href="http://my.oschina.net/kzhou/blog/150290" title="git@osc中team开发、fork和pull request的用法">git@osc中team开发、fork和pull re...</a>-->
+	<!--</li>-->
+			<!--</ul>-->
+<!--</div>-->
+
 <!--<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>-->
+<!--<script>-->
+     <!--$(window).scroll(function() {-->
+        <!--var lastScreen;-->
+        <!--if ($("#postform").length > 0)-->
+            <!--lastScreen = getScrollY() + $(window).height() < $("#postform").offset().top * 1 ? false : true;-->
+        <!--else-->
+            <!--lastScreen = getScrollY() + $(window).height() < $(document).height() * 1 ? false : true;-->
+        <!--if (lastScreen && !upprev_closed) {-->
+            <!--$("#RelativeBlogs").stop().animate({right:"0px"});-->
+            <!--upprev_hidden = false;-->
+        <!--}-->
+        <!--else if (upprev_closed && getScrollY() == 0) {-->
+            <!--upprev_closed = false;-->
+        <!--}-->
+        <!--else if (!upprev_hidden) {-->
+            <!--upprev_hidden = true;-->
+            <!--$("#RelativeBlogs").stop().animate({right:"-400px"});-->
+        <!--}-->
+    <!--});-->
+    <!--$("#RelativeBlogs #btn_close").click(function() {-->
+        <!--$("#RelativeBlogs").stop().animate({right:"-400px"});-->
+        <!--upprev_closed = true;-->
+        <!--upprev_hidden = true;-->
+    <!--});-->
+<!--});-->
+
+<!--</script>-->
 <script type="text/javascript" src="/static/blog/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
 </body>

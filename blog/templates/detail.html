@@ -7,9 +7,9 @@
 {% block content %}
  <h2>{{ blog.name }}</h2>
  <p class="article-meta">发表于{{ blog.created_at }}</p>
- <!--<xmp theme="united" style="display:none;">-->
-    <p>{{ blog.html_content }}</p>
- <!--</xmp>-->
+    <p>
+        {{ blog.html_content|safe }}
+    </p>
 {% endblock %}
 
 

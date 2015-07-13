@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+   Category
+{% endblock %}
+
+{% block content %}
+    <!--{% for blog in blog_list %}-->
+        <!--年份-->
+        <!--{% if blog.created_at|date:'Y' in year_list%}-->
+        <!--<ul>-->
+            <!--<li>{{ blog.name }}</li>-->
+        <!--</ul>-->
+        <!--<ul>-->
+            <!--{{ blog.created_at|date:'M' }}-->
+            <!--<li>-->
+                <!--&lt;!&ndash;月份&ndash;&gt;-->
+                <!--<ul>-->
+                   <!---->
+                    <!--<li>-->
+                        <!--&lt;!&ndash;当月文章列表&ndash;&gt;-->
+                        <!--<ul>-->
+                            <!--<li></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--{% endif %}-->
+    <!--{% endfor %}-->
+        <!--</ul>-->
+<!--第二次尝试-->
+    <!--{% for year in year_list %}-->
+
+            <!--{% ifequal year now_year %}-->
+            <!--<h2>{{ year }}</h2>-->
+                <!--<ul>-->
+                <!--{% for month in blog.created_at|date:'m' %}-->
+
+                <!--<li>-->
+                    <!--<ul>-->
+                    <!--{{ month }}-->
+                    <!--{% for blog in blog_list %}-->
+                        <!--{% if blog.created_at|date:'Y' == year and blog.created_at|date:'m' == month %}-->
+                            <!--<li>{{ blog.name }}•{{ blog.created_at|date:'m' }}</li>-->
+                        <!--{% endif %}-->
+                    <!--{% endfor %}-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--{% endfor %}-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--{% endifequal %}-->
+
+    <!--{% endfor %}-->
+<!--第三种-->
+<!--{% for blog in blog_list %}-->
+<!--<ul>-->
+<!--<li>    {% for year in blog.created_at|date:'Y' %}-->
+        <!--{{ year }}-->
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>{% for month in blog.created_at|date:'M' %}&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ month }}&ndash;&gt;-->
+            <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+        <!--{% endfor %}-->
+   <!--</li>-->
+<!--</ul>-->
+<!--{% endfor %}-->
+
+<!--第四种-->
+{% for year in year_list %}
+    <h2>{{ year }}</h2>
+    {% for month in month_list %}
+    <ul><h3>{{ month }}</h3></ul>
+            {% for blog in blog_list %}
+                <li>
+                    {% if blog.created_at|date:'M' == month and blog.created_at|date:'Y' == year %}
+                       <a href="{% url 'detail' blog.id %}"> {{ blog.name }}  </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+    {% endfor %}
+{% endfor%}
+{% endblock %}
+
+

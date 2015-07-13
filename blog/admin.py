@@ -1,5 +1,7 @@
 from django.contrib import admin
 from blog.models import Blog
+from blog.models import Category
+# from blog.models import blog_with_cat
 
 # Register your models here.
 class BlogAdmin(admin.ModelAdmin):
@@ -9,3 +11,5 @@ class BlogAdmin(admin.ModelAdmin):
 	date_hierarchy = 'created_at'
 
 admin.site.register(Blog,BlogAdmin)
+admin.site.register(Category)
+# admin.site.register(blog_with_cat)
