@@ -2,12 +2,85 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>音乐</title>
+     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/blog/css/samblog.css">
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="#">
+                    SAM'S BLOG
+                </a></li>
+                <li><a href="{% url 'timeline' %}">时间线</a></li>
+                <li><a href="{% url 'music' %}">音乐</a></li>
+                <li><a href="{% url 'category' %}">分类</a></li>
+                <li><a href="#">微评</a></li>
+                <li><a href="#">关于我</a> </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs-block">
+    <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    SAM'S BLOG
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                <!-- Single button -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">时间线</a></li>
+                        <li><a href="#">分类</a></li>
+                        <li><a href="#">微评</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
 <h2>我的豆瓣FM秀</h2>
-<div>
-    <script src="http://img3.douban.com/f/shire/9e4df2475de830f8f347ad9053d8a3be5a4fdf08/js/radiowidget.js?doubanid=68654363&maxresults=10"></script>
+    <div>
+        <script src="http://img3.douban.com/f/shire/9e4df2475de830f8f347ad9053d8a3be5a4fdf08/js/radiowidget.js?doubanid=68654363&maxresults=10"></script>
+    </div>
 </div>
+
+<footer class="footer">
+<div class="container-fluid">
+    <hr class="container-fluid">
+    <br>
+    <div class="row">
+        <div class="span4">
+        </div>
+        <div class="span4">
+            <p>版权所有 © 2015-2016 samblog.com </p>
+            <p>
+            Powered by <a href="http://www.djangoproject.com" target="_blank">Django</a>.
+            Host on <a href="http://www.webfaction.com?affiliate=the5fire" target="_blank">WebFaction</a>.
+            </p>
+        </div>
+        <div class="span4">
+        </div>
+    </div>
+        <br>
+</div>
+</footer>
+
+<script type="text/javascript" src="/static/blog/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load pagination_tags %}
+
 {% block title %}
    首页
 {% endblock %}
@@ -7,18 +9,33 @@
 
 {% block content %}
      {% if latest_blog_list %}
-    <ul>
         {% for blog in latest_blog_list %}
-        <li>
-            <a href="/blogs/{{ blog.id }}/">{{ blog.name }}</a> • 创建于 {{ blog.created_at }}
-            <br>
-
-            {{ blog.content }}
-            <br>
-        </li>
+        <article class="post_page">
+            <h3 class="post-title">
+            <a href="/blogs/{{ blog.id }}/">{{ blog.name }}</a>  <small>创建于 {{ blog.created_at|date:"d F Y" }}</small>
+            </h3>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                <br>
+                  {{ blog.html_content|safe }}
+                <br>
+                    <footer class="post-footer">
+                        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;&nbsp;<small id="detailView">Detail & Comment</small>
+                    </footer>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </article>
         {% endfor %}
-    </ul>
     {% else %}
     <p>No blogs are available.</p>
     {% endif %}
+    {% autopaginate latest_blog_list 3 %}
+    <p class="col-md-5">{% paginate %}</p>
 {% endblock %}
+
+
+

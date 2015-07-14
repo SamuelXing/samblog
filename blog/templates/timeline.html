@@ -76,7 +76,7 @@
             {% for blog in blog_list %}
                 <li>
                     {% if blog.created_at|date:'M' == month and blog.created_at|date:'Y' == year %}
-                       <a href="{% url 'detail' blog.id %}"> {{ blog.name }}  </a>
+                      {{ blog.created_at|date:"d F Y" }} <a href="{% url 'detail' blog.id %}"> {{ blog.name }}  </a>
                     {% endif %}
                 </li>
             {% endfor %}

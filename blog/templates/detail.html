@@ -5,11 +5,24 @@
 {% endblock %}
 
 {% block content %}
- <h2>{{ blog.name }}</h2>
- <p class="article-meta">发表于{{ blog.created_at }}</p>
-    <p>
-        {{ blog.html_content|safe }}
-    </p>
+    <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="post-title">
+                        {{ blog.name }}
+                     </h3>
+                     <p class="article-meta">发表于{{ blog.created_at }}</p>
+                <br>
+                  {{ blog.html_content|safe }}
+                <br>
+                </div>
+                <footer class="post-footer">
+
+                 </footer>
+                <div class="col-md-2">
+                </div>
+   </div>
 {% endblock %}
 
 

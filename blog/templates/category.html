@@ -6,7 +6,7 @@
 
 {% block content %}
     {% for cat in category_list %}
-        <h3>标签名:{{ cat.name }}</h3>
+        <h4>{{ cat.name }}({{ cat.number }})</h4>
         <ul>
             {% for blog in blog_list %}
                 {% ifequal blog.cat_name_id  cat.id %}

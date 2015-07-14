@@ -5,24 +5,49 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+ @media screen and (min-width: 600px) {
+        html {
+            font-size: 100%;
+        }
+    }
+
+ h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+    }
+
+a {
+     color: #F1993C;
+  }
+body{
+	color: #000;
+    font: 100%/1.5  Avenir, Arial;
+}
+
 .setHeader{
     background: url(/static/blog/img/1.jpg) no-repeat center center;
     background-size: cover;
-    height: 500px;
-    margin-top: -20px;
     color: #000;
-    text-align: center;
+	text-align: center;
     text-shadow:0 1px 0 rgba(0,0,0,.1);
+    padding-top: 200px;
 }
+.setHeader {
+    height: 500px;
+}
+
+.setHeader-inner{
+    margin: auto;
+    width:70%;
+}
+
 
 h1.setHeader-title{
     font-size: 40px;
-    padding-top: 200px;
+    /*position:relative left=50% top=50%;*/
 }
 
 .setHeader-description{
     font-size: 24px;
-    text-align: center;
 }
 
 .container-fluid{
@@ -33,9 +58,13 @@ h1.setHeader-title{
     text-align:center;
 }
 
-/*定义文章的布局*/
-.post{
+article h3{
+	text-align:center;
+}
 
+/*定义文章的布局*/
+.post .container{
+	border-bottom-color:#000;
 }
 
 /*题目样式*/

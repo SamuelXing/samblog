@@ -8,6 +8,8 @@ from blog.models import Category
 # Create your views here.
 def blogs(request):
 	latest_blog_list=Blog.objects.all().order_by('-created_at')[:5]
+	for blog in latest_blog_list:
+		blog.html_content=markdown2.markdown(blog.content)
 	context={'latest_blog_list':latest_blog_list}
 	return render(request,'index.html',context)
 
@@ -19,6 +21,10 @@ def detail(request,blog_id):
 def category(request):
 	cat_list=Category.objects.all().order_by('number')
 	blog_list=Blog.objects.all()
+	for cat in cat_list:
+		for blog in blog_list:
+			if cat.id == blog.cat_name.id:
+				cat.number=cat.number+1
 
 	context={'category_list':cat_list, \
 	         'blog_list':blog_list}
