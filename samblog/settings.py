@@ -131,3 +131,5 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+PAGINATION_DEFAULT_PAGINATION = 5
+# PAGINATION_DEFAULT_WINDOW = 2

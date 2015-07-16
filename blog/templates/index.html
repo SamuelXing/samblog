@@ -9,6 +9,7 @@
 
 {% block content %}
      {% if latest_blog_list %}
+        {% autopaginate latest_blog_list 3 %}
         {% for blog in latest_blog_list %}
         <article class="post_page">
             <h3 class="post-title">
@@ -33,7 +34,6 @@
     {% else %}
     <p>No blogs are available.</p>
     {% endif %}
-    {% autopaginate latest_blog_list 3 %}
     <p class="col-md-5">{% paginate %}</p>
 {% endblock %}
 
