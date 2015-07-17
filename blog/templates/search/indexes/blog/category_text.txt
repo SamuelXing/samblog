@@ -1,0 +1,1 @@
+{{ object.cat_name }}

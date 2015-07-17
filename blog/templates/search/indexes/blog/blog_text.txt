@@ -1,0 +1,3 @@
+{{ object.blog_name }}
+{{ object.content }}
+{{ object.created_at }}
