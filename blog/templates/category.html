@@ -8,16 +8,16 @@
 <br>
 <br>
         {% for cat in category_list %}
-            <div class="tag-style col-md-1"><a href="#{{cat.id}} "> {{cat.name}}</a><small>({{ cat.number }})</small></div>
+            <div class="tag-style col-md-1"><a href="#{{cat.id}} "> {{cat.catname}}</a><small>({{ cat.number }})</small></div>
         {% endfor %}
 <br>
 <br>
     {% for cat in category_list %}
-        <h4 id="{{ cat.id }}">{{ cat.name }}({{ cat.number }})</h4>
+        <h4 id="{{ cat.id }}">{{ cat.catname }}({{ cat.number }})</h4>
         <ul>
             {% for blog in blog_list %}
                 {% ifequal blog.cat_name_id  cat.id %}
-                    <li><a href="{% url 'detail' blog.id %}">{{blog.name}}</a></li>
+                    <li><a href="{% url 'detail' blog.id %}">{{blog.blogname}}</a></li>
                 {% endifequal %}
             {% endfor %}
         </ul>

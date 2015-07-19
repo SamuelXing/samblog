@@ -1,3 +1,4 @@
 {{ object.blog_name }}
 {{ object.content }}
+{{ object.summary }}
 {{ object.created_at }}

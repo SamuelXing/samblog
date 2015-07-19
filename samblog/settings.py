@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
 	'blog',
-    'pagination',
+    # 'pagination',
+    'haystack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,3 +134,10 @@ STATICFILES_FINDERS = (
 
 PAGINATION_DEFAULT_PAGINATION = 5
 # PAGINATION_DEFAULT_WINDOW = 2
+
+HAYSTACK_CONNECTIONS={
+	'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}

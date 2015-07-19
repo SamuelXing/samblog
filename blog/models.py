@@ -9,11 +9,11 @@ from django.utils import timezone
 from samblog import settings
 
 class Category(models.Model):
-	name=models.CharField(max_length=50,verbose_name=u'名称')
+	catname=models.CharField(max_length=50,verbose_name=u'名称')
 	number=models.IntegerField(default=0,verbose_name=u'文章数')
 
 	def __unicode__(self):
-		return self.name
+		return self.catname
 
 	class Meta:
 		ordering=['-number']
@@ -23,13 +23,13 @@ class Category(models.Model):
 class Blog(models.Model):
 	user_name=models.ForeignKey(User,null=False,verbose_name=u'作者')
 	cat_name=models.ForeignKey(Category,null=True,default='',verbose_name=u'分类 ')
-	name=models.CharField(max_length=50,null=False,verbose_name=u'标题')
+	blogname=models.CharField(max_length=50,null=False,verbose_name=u'标题')
 	summary=models.CharField(max_length=200,null=False,verbose_name=u'摘要')
 	content=models.TextField(null=False,verbose_name=u'正文')
 	created_at=models.DateTimeField(u'创建时间',auto_now_add=True)
 
 	def __unicode__(self):
-		return self.name
+		return self.blogname
 	'''
 	def was_published_recently(self):
 		return self.created_at>=timezone.now()-datetime.timedelta(days=1)
